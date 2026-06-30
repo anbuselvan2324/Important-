@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>For Nandhini</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", Arial, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ffdde1, #ee9ca7, #ff758c);
+  overflow: hidden;
+  color: #fff;
+}
+
+.slide {
+  display: none;
+  height: 100vh;
+  padding: 35px 22px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  animation: fade 1s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.slide.active {
+  display: flex;
+}
+
+h1 {
+  font-size: clamp(2rem, 8vw, 3rem);
+  margin-bottom: 20px;
+  text-shadow: 0 4px 18px rgba(0,0,0,0.25);
+}
+
+p {
+  font-size: clamp(1.05rem, 4vw, 1.25rem);
+  line-height: 1.8;
+  max-width: 760px;
+  background: rgba(255,255,255,0.20);
+  padding: 24px 20px;
+  border-radius: 24px;
+  backdrop-filter: blur(9px);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.18);
+}
+
+button {
+  margin-top: 30px;
+  padding: 14px 36px;
+  border: none;
+  border-radius: 30px;
+  background: #fff;
+  color: #e75480;
+  font-weight: 800;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.22);
+  transition: 0.25s ease;
+}
+
+button:hover {
+  transform: translateY(-3px) scale(1.03);
+}
+
+.heart {
+  position: fixed;
+  top: -25px;
+  font-size: 22px;
+  animation: fall linear infinite;
+  opacity: 0.9;
+  z-index: 1;
+}
+
+.name {
+  color: #fff7b2;
+}
+
+.final {
+  font-size: clamp(1.15rem, 4vw, 1.4rem);
+  font-weight: 600;
+}
+
+.progress {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 5;
+}
+
+.dot {
+  width: 9px;
+  height: 9px;
+  background: rgba(255,255,255,0.45);
+  border-radius: 50%;
+}
+
+.dot.active-dot {
+  background: #fff;
+  width: 24px;
+  border-radius: 20px;
+}
+
+@keyframes fade {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(360deg);
+  }
+}
+
+.finish-btn {
+  margin-top: 25px;
+  padding: 14px 36px;
+  border: none;
+  border-radius: 35px;
+  background: linear-gradient(135deg, #fff7b2, #ffffff);
+  color: #d63384;
+  font-size: 1.05rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  animation: pulseBtn 1.5s infinite;
+}
+
+.surprise-box {
+  display: none;
+  margin-top: 25px;
+  padding: 28px 22px;
+  max-width: 760px;
+  border-radius: 28px;
+  background: rgba(255,255,255,0.25);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 15px 45px rgba(0,0,0,0.25);
+  animation: popUp 0.9s ease;
+}
+
+.surprise-box.show {
+  display: block;
+}
+
+.surprise-title {
+  font-size: 2.4rem;
+  font-weight: 900;
+  color: #fff7b2;
+  text-shadow: 0 4px 18px rgba(0,0,0,0.35);
+  margin-bottom: 12px;
+}
+
+.surprise-text {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+}
+
+@keyframes pulseBtn {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+  100% { transform: scale(1); }
+}
+
+@keyframes popUp {
+  from { opacity: 0; transform: scale(0.7) translateY(30px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.confetti {
+  position: fixed;
+  top: -20px;
+  font-size: 24px;
+  animation: confettiFall linear forwards;
+  z-index: 999;
+}
+
+@keyframes confettiFall {
+  to {
+    transform: translateY(110vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="slide active">
+  <h1>Hey <span class="name">Nandhini</span> 🌸</h1>
+  <p>
+    Today nee college ku pora first day after summer vacation.
+    And this year is your final year.  
+    So Appu just wanted to make this small surprise for you.
+  </p>
+  <button onclick="nextSlide()">Start</button>
+</div>
+
+<div class="slide">
+  <h1>2026 Half Mudinjudhu...</h1>
+  <p>
+    2026 la half part already over.  
+    But indha 6 months la namma share pannadhu, pesinadhu,
+    understand pannadhu ellam romba special.
+  </p>
+  <button onclick="nextSlide()">Next</button>
+</div>
+
+<div class="slide">
+  <h1>Our Bond ✨</h1>
+  <p>
+    Sometimes small small talks, sometimes serious things,
+    sometimes fun, sometimes silence...  
+    But every moment la one thing same — namma bond strong ah irundhudhu.
+  </p>
+  <button onclick="nextSlide()">Next</button>
+</div>
+
+<div class="slide">
+  <h1>Your Final Year 🎓</h1>
+  <p>
+    Indha final year un life la romba important phase.
+    New memories, new challenges, new dreams.  
+    Nee confident ah iru. Appu always unaku support ah iruppen.
+  </p>
+  <button onclick="nextSlide()">Next</button>
+</div>
+
+<div class="slide">
+  <h1>From Appu 💫</h1>
+  <p>
+    Nandhini, last 6 months la namma share pannadhu pola,
+    upcoming days, months, years la kooda same care, same support,
+    same understanding irukkanum.
+  </p>
+  <button onclick="nextSlide()">Final</button>
+</div>
+
+<div class="slide">
+  <h1>One Small Promise 🤍</h1>
+  <p class="final">
+    Let’s support each other and achieve our dreams.  
+    College final year super ah start aagattum,  
+    and this remaining 2026 namakku more beautiful memories kudukkattum.
+    <br><br>
+    — Appu
+  </p>
+
+  <button class="finish-btn" onclick="showSurprise()">Finish ✨</button>
+
+  <div id="surpriseBox" class="surprise-box">
+    <div class="surprise-title">Place aidu pulla 🎓✨</div>
+    <p class="surprise-text">
+      Final year la nee semma ah shine pannu.  
+      Un dreams ellam achieve pannu.  
+      Naan always un side la support ah iruppen.  
+      Go and make this year unforgettable, Nandhini! 🌸
+    </p>
+  </div>
+</div>
+
+<div class="progress" id="progress"></div>
+
+<script>
+let currentSlide = 0;
+const slides = document.querySelectorAll(".slide");
+const progress = document.getElementById("progress");
+
+slides.forEach((_, index) => {
+  const dot = document.createElement("div");
+  dot.className = index === 0 ? "dot active-dot" : "dot";
+  progress.appendChild(dot);
+});
+
+const dots = document.querySelectorAll(".dot");
+
+function updateDots() {
+  dots.forEach((dot, index) => {
+    dot.className = index === currentSlide ? "dot active-dot" : "dot";
+  });
+}
+
+function nextSlide() {
+  if (currentSlide >= slides.length - 1) return;
+  slides[currentSlide].classList.remove("active");
+  currentSlide++;
+  slides[currentSlide].classList.add("active");
+  updateDots();
+}
+
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  const icons = ["🌸", "✨", "🤍", "💫"];
+  heart.innerHTML = icons[Math.floor(Math.random() * icons.length)];
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.animationDuration = Math.random() * 3 + 4 + "s";
+  heart.style.fontSize = Math.random() * 12 + 18 + "px";
+  document.body.appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  }, 7500);
+}
+
+setInterval(createHeart, 330);
+
+function showSurprise() {
+  const box = document.getElementById("surpriseBox");
+  if (box) box.classList.add("show");
+
+  for (let i = 0; i < 45; i++) {
+    setTimeout(() => {
+      const item = document.createElement("div");
+      item.className = "confetti";
+      item.innerHTML = ["🎉", "✨", "🌸", "💫", "🎓"][Math.floor(Math.random() * 5)];
+      item.style.left = Math.random() * 100 + "vw";
+      item.style.animationDuration = (Math.random() * 2 + 3) + "s";
+      document.body.appendChild(item);
+      setTimeout(() => item.remove(), 5200);
+    }, i * 45);
+  }
+}
+
+</script>
+
+</body>
+</html>
